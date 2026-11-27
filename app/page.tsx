@@ -1,28 +1,31 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { programs } from '@/content/programs';
 import { destinations, programTypes } from '@/content/taxonomy';
 import { ProgramCard, Scene, Tag, AcademyBand, Faq } from '@/components/ui';
 import { Finder } from '@/components/Finder';
 import { Icon } from '@/components/Icon';
-import { sceneSvg } from '@/components/scenes';
 
 export default function Home(){
   const featured = programs.filter(p => p.featured);
   return (<>
-    <section className="hero"><div className="hero-in">
-      <div className="hero-copy">
-        <span className="eyebrow">Internships &amp; immersion · Taiwan · China · Singapore</span>
-        <h1>Build your skills. <span>Experience a new working world.</span></h1>
-        <p className="lead">Professional placements and short immersion programs for students and early-career professionals — with real chances to use and grow your Mandarin, at the level each program needs.</p>
-        <div className="hero-cta"><Link className="btn btn-primary btn-xl" href="/programs">Explore programs <Icon name="right" /></Link><Link className="btn btn-ghost btn-xl" href="/match">Help me choose</Link></div>
-        <p className="fine"><Tag>Sample programs</Tag> Programs shown are examples. Dates, fees and hosts are to be confirmed.</p>
+    <section className="hero hero-photo">
+      <Image className="hero-bg" src="/images/hero-taipei.webp" alt="Three young professionals working together at a table in a bright Taipei office, with the city skyline in the window" fill priority sizes="100vw" />
+      <div className="hero-scrim" aria-hidden="true" />
+      <div className="hero-in">
+        <div className="hero-copy">
+          <span className="eyebrow">Internships &amp; immersion · Taiwan · China · Singapore</span>
+          <h1>Build your skills. <span>Experience a new working world.</span></h1>
+          <p className="lead">Professional placements and short immersion programs for students and early-career professionals — with real chances to use and grow your Mandarin, at the level each program needs.</p>
+          <div className="hero-cta"><Link className="btn btn-primary btn-xl" href="/programs">Explore programs <Icon name="right" /></Link><Link className="btn btn-ghost btn-xl" href="/match">Help me choose</Link></div>
+          <p className="fine"><Tag>Sample programs</Tag> Programs shown are examples. Dates, fees and hosts are to be confirmed.</p>
+        </div>
+        <div className="hero-floats" aria-hidden="true">
+          <div className="float-card fc1"><b>Marketing Internship</b><i>Taipei · 8–12 weeks</i></div>
+          <div className="float-card fc2"><b>Mandarin: basic helpful</b><i>Requirements set per program</i></div>
+        </div>
       </div>
-      <div className="hero-art" aria-hidden="true">
-        <div className="hero-blob"><span dangerouslySetInnerHTML={{ __html: sceneSvg('taiwan') }} /></div>
-        <div className="float f1"><span className="fl-ic"><Icon name="brief" /></span><span><b>Marketing Internship</b><i>Taipei · 8–12 weeks</i></span></div>
-        <div className="float f2"><span className="fl-ic teal"><Icon name="lang" /></span><span><b>Mandarin: basic helpful</b><i>Requirements set per program</i></span></div>
-      </div>
-    </div></section>
+    </section>
 
     <section className="band finder-band" aria-labelledby="pf-h"><div className="wrap">
       <div className="sec-head"><span className="eyebrow">Program finder</span><h2 id="pf-h">Find a program that fits your goals</h2></div>
