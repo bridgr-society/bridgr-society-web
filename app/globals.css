@@ -696,3 +696,28 @@ noscript .btn{margin-top:8px}
 .step-n{background:var(--teal-dark);color:#fff;font-family:var(--display)}
 .hero h1 span{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--teal-dark)}
 .field-card .field-ic,.type-card .type-ic,.empty .empty-ic,.notconn .empty-ic{color:#fff}
+
+/* ---------- Public application form (/apply) ---------- */
+.ap-wrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:48px;align-items:start}
+.ap-intro{position:sticky;top:96px;display:grid;gap:14px}
+.ap-intro h1{font-size:clamp(34px,4vw,48px)}
+.ap-intro .lead{margin:0}
+.ap-facts{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+.ap-facts li{display:flex;gap:10px;align-items:flex-start}
+.ap-facts svg{flex:0 0 auto;width:20px;height:20px;color:var(--teal-dark);margin-top:2px}
+.ap-form{padding:32px;gap:26px}
+.ap-req-note{margin:0}
+.req{color:#C2410C;margin-left:3px;font-weight:700}
+.ap-sec{display:grid;gap:18px;padding-top:24px;border-top:1px solid var(--line)}
+.ap-sec:first-of-type{border-top:0;padding-top:0}
+.ap-sec-h{display:flex;align-items:center;gap:12px;font-size:22px;letter-spacing:-.01em}
+.ap-sec-h i{font-style:normal;font-family:var(--font);font-size:15px;font-weight:500;color:var(--muted)}
+.ap-sec-n{width:32px;height:32px;border-radius:50%;background:var(--teal-dark);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex:0 0 auto}
+.ap-sec-body{display:grid;gap:18px}
+.ap-date{max-width:260px}
+.ap-gender-self{display:none}
+fieldset:has(input[value="Prefer to self-describe"]:checked) .ap-gender-self{display:grid}
+.ap-form legend{font-weight:700;margin-bottom:8px}
+.ap-form legend i{font-style:normal;font-weight:500;color:var(--muted)}
+@media (max-width:960px){.ap-wrap{grid-template-columns:1fr;gap:24px}.ap-intro{position:static}}
+@media (max-width:700px){.ap-form{padding:20px}.ap-form .two-col{grid-template-columns:1fr}}

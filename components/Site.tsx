@@ -25,9 +25,10 @@ export async function Header(){
             </div>
           </details>
         ) : cap.signIn ? <Link className="btn btn-ghost btn-sm" href="/account">Sign in</Link> : null}
+        <Link className="btn btn-primary btn-sm hdr-apply" href="/apply">Apply now</Link>
         <details className="menu-wrap mnav">
           <summary className="icon-btn hdr-burger" aria-label="Menu"><Icon name="menu" /></summary>
-          <nav className="mnav-panel" aria-label="Main (mobile)"><NavLinks signedIn={!!user} />{!user && cap.signIn && <Link href="/account">Sign in</Link>}</nav>
+          <nav className="mnav-panel" aria-label="Main (mobile)"><NavLinks signedIn={!!user} />{!user && cap.signIn && <Link href="/account">Sign in</Link>}<Link href="/apply">Apply now</Link></nav>
         </details>
       </div>
     </div></header>
@@ -40,7 +41,7 @@ export function Footer(){
       <div className="ftr-brand"><Brand /><p>Internships and immersion programs in Taiwan, China and Singapore — with optional Mandarin preparation through Bridgr Academy.</p></div>
       <div className="ftr-cols">
         <div><h2 className="ftr-h">Explore</h2><ul><li><Link href="/programs">Programs</Link></li><li><Link href="/destinations">Destinations</Link></li><li><Link href="/career-fields">Career fields</Link></li><li><Link href="/program-types">Internships vs immersion</Link></li><li><Link href="/match">Help me choose</Link></li></ul></div>
-        <div><h2 className="ftr-h">Support</h2><ul><li><Link href="/how-it-works">How it works</Link></li><li><Link href="/mandarin">Mandarin preparation</Link></li><li><Link href="/enquire">Ask a question</Link></li></ul></div>
+        <div><h2 className="ftr-h">Support</h2><ul><li><Link href="/how-it-works">How it works</Link></li><li><Link href="/mandarin">Mandarin preparation</Link></li><li><Link href="/apply">Apply</Link></li><li><Link href="/enquire">Ask a question</Link></li></ul></div>
         <div><h2 className="ftr-h">The Bridgr family</h2><ul><li><span>Bridgr Global</span></li><li><span>Bridgr Academy — language learning</span></li><li><span>Bridgr Society — internships &amp; immersion</span></li><li><span>Bridgr Connect — business matching</span></li></ul></div>
         <div><h2 className="ftr-h">Legal</h2><ul><li><Link href="/privacy">Privacy (draft)</Link></li><li><Link href="/terms">Terms (draft)</Link></li></ul></div>
       </div>

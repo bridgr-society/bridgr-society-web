@@ -90,7 +90,7 @@ export function NotConnected({ title, children, pending }: { title: string; chil
       <h1 className="h2">{title}</h1>
       <p className="lead">{children ?? 'Online applications open once Bridgr sign-in is connected to this site. Until then, register your interest and an advisor will contact you.'}</p>
       {pending && <p className="fine">Sign-in is configured for this deployment but the shared Bridgr account integration hasn’t been completed.</p>}
-      <div className="empty-acts left"><Link className="btn btn-primary" href="/enquire?kind=interest">Register interest</Link><Link className="btn btn-ghost" href="/programs">Browse programs</Link></div>
+      <div className="empty-acts left"><Link className="btn btn-primary" href="/apply">Apply now</Link><Link className="btn btn-ghost" href="/programs">Browse programs</Link></div>
     </div></div>
   );
 }

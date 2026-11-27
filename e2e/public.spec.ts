@@ -30,7 +30,7 @@ test('direct URLs, filters and no-match state', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Ask an advisor' })).toHaveAttribute('href', /kind=match/);
   await page.goto('/programs?destination=mars');
   await expect(page.locator('.pcard')).toHaveCount(9);
-  for (const u of ['/destinations/singapore', '/career-fields/design', '/program-types', '/how-it-works', '/mandarin', '/about', '/privacy', '/terms']){
+  for (const u of ['/destinations/singapore', '/career-fields/design', '/program-types', '/how-it-works', '/mandarin', '/apply', '/privacy', '/terms']){
     const r = await page.goto(u); expect(r?.status()).toBe(200); await fits(page);
   }
   expect((await page.goto('/programs/does-not-exist'))?.status()).toBe(404);

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const NAV: [string, string][] = [['/programs', 'Programs'], ['/destinations', 'Destinations'], ['/career-fields', 'Career fields'], ['/how-it-works', 'How it works'], ['/about', 'About']];
+const NAV: [string, string][] = [['/programs', 'Programs'], ['/destinations', 'Destinations'], ['/career-fields', 'Career fields'], ['/how-it-works', 'How it works']];
 export function NavLinks({ signedIn }: { signedIn: boolean }){
   const path = usePathname() || '/';
   const sec = '/' + (path.split('/')[1] || '');

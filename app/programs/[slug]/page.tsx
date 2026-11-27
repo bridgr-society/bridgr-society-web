@@ -16,10 +16,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   const p = programBySlug((await params).slug); if (!p) notFound();
   const req = requirementOf(p), cap = capabilities();
   const similar = programs.filter(x => x.slug !== p.slug && (x.destination === p.destination || x.field === p.field)).slice(0, 3);
-  const canApply = p.status === 'open';
-  const primary = canApply
-    ? <Link className="btn btn-primary btn-lg btn-block" href={`/apply/${p.slug}`}>Apply now</Link>
-    : <Link className="btn btn-primary btn-lg btn-block" href={`/enquire?program=${p.slug}&kind=interest`}>Register interest</Link>;
+  /* Production: everyone can apply through the public form (sent to the team inbox).
+     Preview test-data mode keeps the signed-in multi-step flow for open programs. */
+  const applyHref = cap.applications && p.status === 'open' ? `/apply/${p.slug}` : `/apply?program=${p.slug}`;
+  const primary = <Link className="btn btn-primary btn-lg btn-block" href={applyHref}>Apply now</Link>;
   return (<>
     <section className="p-hero"><div className="wrap p-hero-in">
       <div><Crumbs items={[['/', 'Home'], ['/programs', 'Programs'], ['', p.title]]} />
@@ -49,10 +49,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         <dl className="mini-facts"><div><dt>Type</dt><dd>{typeBySlug(p.type)!.name}</dd></div><div><dt>Where</dt><dd>{placeLine(p)}</dd></div><div><dt>Duration</dt><dd>{p.durationText}</dd></div><div><dt>Starts</dt><dd>{p.starts.join(', ')}</dd></div><div><dt>Fees</dt><dd>{tbc(p.confirmed.fee)}</dd></div><div><dt>Mandarin</dt><dd>{req.name}</dd></div></dl>
         {primary}
         <Link className="btn btn-ghost btn-block" href={`/enquire?program=${p.slug}`}>Ask a question</Link>
-        <p className="fine">{canApply ? (cap.applications ? 'Applying uses your Bridgr account so your draft is saved. Applying doesn’t guarantee a place.' : 'Online applications open once Bridgr sign-in is connected. You can register interest now.') : `${STATUS[p.status].label}. No account needed to register interest.`}</p>
+        <p className="fine">No account needed. Applying sends your details to our team — it doesn’t guarantee a place.</p>
       </aside></div>
     </div>
     {similar.length > 0 && <section className="wrap sec"><div className="sec-head"><h2>Similar programs</h2></div><div className="pgrid">{similar.map(x => <ProgramCard key={x.slug} p={x} />)}</div></section>}
-    <div className="mobile-cta">{canApply ? <Link className="btn btn-primary btn-block" href={`/apply/${p.slug}`}>Apply now</Link> : <Link className="btn btn-primary btn-block" href={`/enquire?program=${p.slug}&kind=interest`}>Register interest</Link>}</div>
+    <div className="mobile-cta"><Link className="btn btn-primary btn-block" href={applyHref}>Apply now</Link></div>
   </>);
 }
