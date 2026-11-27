@@ -695,3 +695,4 @@ noscript .btn{margin-top:8px}
 .field-ic,.type-ic,.type-ic.immersion,.fl-ic,.fl-ic.teal,.empty-ic{background:var(--teal-dark);color:#fff}
 .step-n{background:var(--teal-dark);color:#fff;font-family:var(--display)}
 .hero h1 span{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--teal-dark)}
+.field-card .field-ic,.type-card .type-ic,.empty .empty-ic,.notconn .empty-ic{color:#fff}
