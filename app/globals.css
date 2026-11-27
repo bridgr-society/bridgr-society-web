@@ -655,3 +655,10 @@ noscript .btn{margin-top:8px}
   .hero-photo .hero-bg{object-position:65% 100%}
 }
 @media (max-width:700px){ .hero-floats{min-height:280px} }
+
+/* White buttons fill solid on hover (not just a border change) */
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn-ghost:active{background:var(--blue-press);border-color:var(--blue-press);color:#fff}
+.btn-white:hover,.btn-white:focus-visible{background:var(--blue-press);color:#fff}
+.btn-white:active{background:#003C9E;color:#fff}
+.btn-ghost:disabled,.btn-ghost:disabled:hover{background:var(--field);border-color:var(--line);color:var(--control)}
