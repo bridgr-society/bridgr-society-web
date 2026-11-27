@@ -731,3 +731,4 @@ fieldset:has(input[value="Prefer to self-describe"]:checked) .ap-gender-self{dis
 .band.tint .center .link:hover{color:#CCFBF1}
 .band.tint :focus-visible{outline-color:#fff}
 .band.tint .type-card :focus-visible{outline-color:var(--blue-hover)}
+.band.tint .type-card{color:var(--ink)}
