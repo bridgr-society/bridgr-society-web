@@ -662,3 +662,17 @@ noscript .btn{margin-top:8px}
 .btn-white:hover,.btn-white:focus-visible{background:var(--blue-press);color:#fff}
 .btn-white:active{background:#003C9E;color:#fff}
 .btn-ghost:disabled,.btn-ghost:disabled:hover{background:var(--field);border-color:var(--line);color:var(--control)}
+
+/* Academy band: solid blue → purple gradient, white text */
+.academy{background:linear-gradient(115deg,#0062E8 0%,#5B4BF0 50%,#7C3AED 100%);border:0;color:#fff;box-shadow:0 18px 40px -18px rgba(76,58,237,.55)}
+.academy h2,.academy p,.academy .fine{color:#fff}
+.academy .fine{opacity:.82}
+.academy .ac-tag{color:#fff;background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.38)}
+.academy .btn-academy{background:#fff;color:var(--violet-dark);border-color:#fff}
+.academy .btn-academy:hover,.academy .btn-academy:focus-visible{background:#4C1D95;border-color:#4C1D95;color:#fff}
+.academy .btn-academy:active{background:#3B0F7A;border-color:#3B0F7A;color:#fff}
+.academy .ac-acts .btn-text{color:#fff}
+.academy .ac-acts .btn-text:hover{color:#fff;text-decoration-thickness:2px;opacity:.85}
+.academy :focus-visible{outline-color:#fff}
+.academy .ac-art{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
+.academy .ac-art i{color:rgba(255,255,255,.85)}
