@@ -676,3 +676,9 @@ noscript .btn{margin-top:8px}
 .academy :focus-visible{outline-color:#fff}
 .academy .ac-art{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
 .academy .ac-art i{color:rgba(255,255,255,.85)}
+
+/* Wordmark fonts: "Bridgr" in Satoshi, "Society" in the Sora accent font */
+@font-face{font-family:"Sora";src:url("/fonts/Sora-Variable.woff2") format("woff2");font-weight:100 800;font-style:normal;font-display:swap}
+:root{--accent-font:"Sora", var(--display);--wordmark:"Satoshi", var(--display)}
+.brand-name{font-family:var(--wordmark);font-weight:700;letter-spacing:-.015em}
+.brand-name b{font-family:var(--accent-font);font-weight:600;letter-spacing:-.02em}

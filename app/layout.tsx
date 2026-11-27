@@ -18,6 +18,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }){
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet" />
+        {/* Satoshi (wordmark "Bridgr") from Fontshare; Sora (accent, "Society") is self-hosted in /public/fonts */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700&display=swap" rel="stylesheet" />
+        <link rel="preload" href="/fonts/Sora-Variable.woff2" as="font" type="font/woff2" crossOrigin="" />
       </head>
       <body>
         <a className="skip" href="#main">Skip to content</a>
