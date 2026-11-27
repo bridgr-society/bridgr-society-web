@@ -24,6 +24,7 @@ export const programs: Program[] = [
     "status": "open",
     "featured": false,
     "scene": "office",
+    "photo": { "src": "/images/prog-taipei-marketing.webp", "alt": "Two interns reviewing a campaign mood board and colour swatches in a Taipei studio" },
     "summary": "Support a marketing team with campaigns, content and research for audiences in Taiwan and the region.",
     "audience": "Students and recent graduates in marketing, communications or business who want hands-on campaign experience.",
     "activities": [
@@ -72,6 +73,7 @@ export const programs: Program[] = [
     "status": "soon",
     "featured": false,
     "scene": "studio",
+    "photo": { "src": "/images/prog-taipei-design.webp", "alt": "Two designers reviewing app wireframes at a desk, with Taipei 101 outside the window" },
     "summary": "Work with a product team on user research, wireframes and visual design.",
     "audience": "Design students and early-career designers with a portfolio.",
     "activities": [
@@ -166,6 +168,7 @@ export const programs: Program[] = [
     "status": "enquiry",
     "featured": false,
     "scene": "tech",
+    "photo": { "src": "/images/prog-shenzhen-tech.webp", "alt": "Two developers pair-programming at a monitor in a Shenzhen office" },
     "summary": "Join an engineering team building hardware-connected software products.",
     "audience": "Computer science and engineering students.",
     "activities": [
@@ -260,6 +263,7 @@ export const programs: Program[] = [
     "status": "soon",
     "featured": false,
     "scene": "office",
+    "photo": { "src": "/images/dest-singapore.webp", "alt": "Marina Bay Sands and the Singapore skyline across the bay" },
     "summary": "Help a regional marketing team with performance campaigns and reporting.",
     "audience": "Marketing and data-minded students.",
     "activities": [
@@ -353,6 +357,7 @@ export const programs: Program[] = [
     "status": "enquiry",
     "featured": false,
     "scene": "china",
+    "photo": { "src": "/images/dest-china.webp", "alt": "Shanghai’s Lujiazui skyline seen across the Huangpu River from the Bund" },
     "summary": "A two-week introduction to business in Shanghai through visits, talks and team challenges.",
     "audience": "Students exploring international business careers.",
     "activities": [
@@ -398,6 +403,7 @@ export const programs: Program[] = [
     "status": "enquiry",
     "featured": false,
     "scene": "studio",
+    "photo": { "src": "/images/prog-product-video.webp", "alt": "An intern setting up a product video shoot while a colleague reviews analytics on a laptop" },
     "summary": "Assist a production team on video and event projects from planning to delivery.",
     "audience": "Media, film and communications students.",
     "activities": [
