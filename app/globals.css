@@ -732,3 +732,70 @@ fieldset:has(input[value="Prefer to self-describe"]:checked) .ap-gender-self{dis
 .band.tint :focus-visible{outline-color:#fff}
 .band.tint .type-card :focus-visible{outline-color:var(--blue-hover)}
 .band.tint .type-card{color:var(--ink)}
+
+/* ============================================================
+   Solid colours instead of light tinted backgrounds.
+   Every tinted box/pill becomes a solid fill with white text,
+   icons and links (all pairs ≥ 4.5:1 with white).
+   ============================================================ */
+:root{--solid-blue:#005AE9;--solid-teal:#0F766E;--solid-ok:#166534;--solid-warn:#9A4A00;--solid-danger:#B42318;--solid-slate:#475569;--solid-violet:#6D28D9}
+
+/* Notes / info boxes */
+.note,.note.ok,.note.warn{background:var(--solid-blue);color:#fff}
+.note.ok{background:var(--solid-ok)} .note.warn{background:var(--solid-warn)}
+.note svg,.note.ok svg,.note.warn svg{color:#fff}
+.note a,.note .link{color:#fff;text-decoration:underline}
+.note b{color:#fff}
+
+/* Language requirement box on program pages */
+.req-box{background:var(--solid-teal);border-color:var(--solid-teal);color:#fff}
+.req-box .req-lvl,.req-box b,.req-box p,.req-box svg{color:#fff}
+
+/* Error summary */
+.error-sum{background:var(--solid-danger);border-color:var(--solid-danger);color:#fff}
+.error-sum a,.error-sum button,.error-sum b{color:#fff}
+.error-sum :focus-visible{outline-color:#fff}
+
+/* Chips, tags, pills and status labels */
+.chip{background:var(--solid-blue);color:#fff;border-color:var(--solid-blue)}
+.chip svg{color:#fff}
+.chip.static{background:var(--solid-teal);color:#fff;border-color:var(--solid-teal)}
+.sample-tag,.demo-tag,.st-enq,.pill.off,.as-draft{background:var(--solid-slate);color:#fff;border-color:var(--solid-slate)}
+.demo-tag svg,.pill.off svg{color:#fff}
+.st-open,.pill.ok{background:var(--solid-ok);color:#fff}
+.st-soon,.as-act{background:var(--solid-warn);color:#fff}
+.as-sub{background:var(--solid-blue);color:#fff}
+.as-rev{background:var(--solid-teal);color:#fff}
+
+/* Selected choices in forms (radio cards, segmented buttons, chip checkboxes) */
+.seg label.on,.seg label:has(input:checked),
+.chip-check.on,.chip-check:has(input:checked){background:var(--solid-blue);border-color:var(--solid-blue);color:#fff}
+.opt.on,.opt:has(input:checked){background:var(--solid-blue);border-color:var(--solid-blue);box-shadow:none;color:#fff}
+.opt:has(input:checked) i,.opt.on i{color:#E2E8F0}
+.opt:has(input:checked) input{accent-color:#fff}
+
+/* Hover fills */
+.toc a:hover{background:var(--solid-blue);color:#fff}
+
+/* Confirmation / readiness */
+.done-ic{background:var(--solid-ok);color:#fff}
+.done-ic.warn{background:var(--solid-warn);color:#fff}
+.readiness.fit{background:var(--solid-ok);color:#fff}
+.readiness.gap{background:var(--solid-warn);color:#fff}
+.readiness.fit svg,.readiness.gap svg,.readiness b{color:#fff}
+
+/* Academy (purple) areas */
+.academy-hero{background:var(--solid-violet);border-bottom-color:var(--solid-violet)}
+.academy-hero h1,.academy-hero .lead,.academy-hero .crumbs ol,.academy-hero .crumbs a{color:#fff}
+.academy-hero .crumbs a:hover{color:#EDE9FE}
+.academy-hero .ac-tag{color:#fff;background:rgba(0,0,0,.18);border-color:rgba(255,255,255,.45)}
+.academy-hero :focus-visible{outline-color:#fff}
+.offer-card,.ac-card.offer{background:var(--solid-violet);border-color:var(--solid-violet);color:#fff}
+.offer-card h2,.offer-card > p,.ac-card.offer h2,.ac-card.offer > p{color:#fff}
+.offer-card .ac-tag{color:#fff;background:rgba(0,0,0,.18);border-color:rgba(255,255,255,.45)}
+.ac-art i{color:#fff}
+
+/* Preview-only banners */
+.env-banner{background:var(--solid-warn);color:#fff;border-bottom-color:var(--solid-warn)}
+.env-banner a,.env-banner svg{color:#fff}
+.preview-label{background:var(--solid-warn);color:#fff}
