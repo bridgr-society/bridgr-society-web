@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }){
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet" />
         {/* Satoshi (wordmark "Bridgr") from Fontshare; Sora (accent, "Society") is self-hosted in /public/fonts */}
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}

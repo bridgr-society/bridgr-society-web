@@ -19,7 +19,7 @@
   --r:10px; --r-lg:16px; --r-xl:22px; --pill:999px;
   --shadow:0 1px 2px rgba(15,23,42,.05), 0 2px 8px rgba(15,23,42,.05); --shadow-lg:0 14px 40px rgba(15,23,42,.12);
   --font:"Anuphan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --display:"Bricolage Grotesque", "Anuphan", var(--font);
+  --display:"Sora", "Anuphan", var(--font);
   --hdr:68px;
 }
 *{box-sizing:border-box}
@@ -690,3 +690,8 @@ noscript .btn{margin-top:8px}
 .dcard:hover .scene.photo img,.pcard:hover .pcard-img .scene.photo img{transform:scale(1.04)}
 @media (prefers-reduced-motion:reduce){.dcard:hover .scene.photo img,.pcard:hover .pcard-img .scene.photo img{transform:none}}
 .scene.photo.d-hero-img{position:absolute;inset:0}
+
+/* Solid teal: icon tiles (white glyph), numbers and small accents. Gradients are kept only for coloured card/band backgrounds. */
+.field-ic,.type-ic,.type-ic.immersion,.fl-ic,.fl-ic.teal,.empty-ic{background:var(--teal-dark);color:#fff}
+.step-n{background:var(--teal-dark);color:#fff;font-family:var(--display)}
+.hero h1 span{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--teal-dark)}
