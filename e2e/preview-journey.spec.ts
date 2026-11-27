@@ -1,0 +1,72 @@
+import { test, expect } from './fixtures';
+test.skip(process.env.E2E_MODE !== 'preview', 'Preview test-data mode only');
+
+test('apply → save → Academy handoff → return → submit → dashboard', async ({ page }) => {
+  await expect(async () => { await page.goto('/'); await expect(page.locator('.env-banner')).toContainText('test data'); }).toPass();
+  await page.goto('/programs/taipei-marketing');
+  await page.locator('.detail-side .btn-primary, .mobile-cta .btn-primary').first().click();
+  await expect(page).toHaveURL(/\/account\?next=%2Fapply%2Ftaipei-marketing|\/account\?next=\/apply\/taipei-marketing/);
+  await expect(page.getByText('Marketing Internship')).toBeVisible();
+  await page.getByRole('button', { name: 'Continue with test account' }).click();
+  await expect(page).toHaveURL(/\/apply\/taipei-marketing\/background/);
+  await page.getByRole('button', { name: 'Save and continue' }).click();
+  await expect(page.locator('.error-sum li')).toHaveCount(4);
+  await page.locator('label.opt', { hasText: 'Undergraduate student' }).click();
+  await page.locator('#af-study').fill('BBA Marketing, year 3');
+  await page.locator('#af-motivation').fill('I want campaign experience in Taiwan and to use my Mandarin at work.');
+  await page.locator('label.chip-check', { hasText: 'Use and improve my Mandarin' }).click();
+  await page.getByRole('button', { name: 'Save and continue' }).click();
+  await expect(page).toHaveURL(/\/availability$/);
+  await page.locator('label.opt', { hasText: 'Summer 2027' }).click();
+  await page.locator('#af-commit').check();
+  await page.locator('label.opt', { hasText: 'Beginner' }).click();
+  await expect(page.getByText('self-reported, not a verified')).toBeVisible();
+  await page.getByRole('button', { name: 'Explore Mandarin lessons' }).click();
+  await expect(page).toHaveURL(/\/prepare$/);
+  await expect(page.locator('.note.ok')).toContainText('Availability & language');
+  await page.locator('input[name=level]').check();
+  await page.locator('label.chip-check', { hasText: 'Industry vocabulary' }).click();
+  await page.getByRole('button', { name: 'Continue to Bridgr Academy' }).click();
+  await expect(page.getByText('Bridgr Academy isn’t connected yet.')).toBeVisible();
+  await expect(page.getByText('Mandarin level: Beginner (self-reported)')).toBeVisible();
+  await expect(page.getByText('Requirement:')).toHaveCount(0);
+  await page.getByRole('link', { name: 'Continue my application' }).click();
+  await expect(page).toHaveURL(/\/apply\/taipei-marketing\/availability$/);
+  await expect(page.locator('input[name=mandarin][value=beginner]')).toBeChecked();
+  await page.getByRole('button', { name: 'Save and continue' }).click();
+  await page.getByRole('button', { name: 'Submit application' }).click();
+  await expect(page.locator('.error-sum')).toContainText('accurate');
+  await page.locator('#af-accurate').check();
+  await page.getByRole('button', { name: 'Submit application' }).click();
+  await expect(page.getByText('This isn’t an offer or a confirmed placement.')).toBeVisible();
+  await page.getByRole('link', { name: 'Go to my application' }).click();
+  await expect(page.getByText('Preparation checklist')).toBeVisible();
+  await expect(page.getByText('Shared: Mandarin level (self-reported), learning goals')).toBeVisible();
+  await page.goto('/status'); await page.getByRole('button', { name: 'Advance latest application status' }).click();
+  await expect(page.locator('.next-box')).toContainText('Under review');
+});
+
+test('another browser cannot open my application', async ({ page, browser }) => {
+  await page.goto('/account?next=/apply/singapore-finance');
+  await page.getByRole('button', { name: 'Continue with test account' }).click();
+  await expect(page).toHaveURL(/\/apply\/singapore-finance\/background/);
+  await page.getByRole('button', { name: 'Save and exit' }).click();
+  const href = await page.locator('.app-card h2 a').first().getAttribute('href');
+  const other = await browser.newContext({ baseURL: test.info().project.use.baseURL }); if (process.env.E2E_BLOCK_FONTS === '1') await other.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort()); const p2 = await other.newPage();
+  await p2.goto('/account?next=/applications'); await p2.locator('input[name=email]').fill('someone.else@example.com');
+  await p2.getByRole('button', { name: 'Continue with test account' }).click();
+  await expect(p2).toHaveURL(/\/applications$/);
+  await expect(p2.getByText('No applications yet')).toBeVisible();
+  await p2.goto(href!);
+  await expect(p2.getByRole('heading', { level: 1 })).toHaveText('Application not found');
+  await other.close();
+});
+
+test('enquiry in preview says it was not delivered', async ({ page }) => {
+  await page.goto('/enquire?program=shenzhen-tech&kind=interest');
+  await page.getByRole('button', { name: 'Send' }).click();
+  await expect(page.locator('.error-sum')).toBeVisible();
+  await page.locator('#en-name').fill('Test Person'); await page.locator('#en-email').fill('test@example.com'); await page.locator('#en-consent').check();
+  await page.getByRole('button', { name: 'Send' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Preview only — not sent');
+});
