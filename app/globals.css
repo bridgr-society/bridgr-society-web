@@ -799,3 +799,4 @@ fieldset:has(input[value="Prefer to self-describe"]:checked) .ap-gender-self{dis
 .env-banner{background:var(--solid-warn);color:#fff;border-bottom-color:var(--solid-warn)}
 .env-banner a,.env-banner svg{color:#fff}
 .preview-label{background:var(--solid-warn);color:#fff}
+.offer-card .facts,.ac-card.offer .facts{color:var(--ink)}
