@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { Icon, type IconName } from './Icon';
 import { sceneSvg, SCENES } from './scenes';
-import type { Program } from '@/content/types';
+import type { Program, Photo } from '@/content/types';
 import { faqs } from '@/content/taxonomy';
 import { STATUS, TBC, placeLine, fieldBySlug, typeBySlug, requirementOf } from '@/lib/catalog';
 
@@ -19,7 +20,8 @@ export function LogoMark({ size = 30 }: { size?: number }){
 export const Brand = () => <Link className="brand" href="/" aria-label="Bridgr Society home"><LogoMark /><span className="brand-name">Bridgr <b>Society</b></span></Link>;
 
 /* ---------- small pieces ---------- */
-export function Scene({ kind, className = '' }: { kind: string; className?: string }){
+export function Scene({ kind, className = '', photo, sizes = '(max-width: 700px) 100vw, 33vw', priority }: { kind: string; className?: string; photo?: Photo; sizes?: string; priority?: boolean }){
+  if (photo) return <figure className={`scene photo ${className}`}><Image src={photo.src} alt={photo.alt} fill sizes={sizes} priority={priority} /></figure>;
   const alt = (SCENES as Record<string, { alt: string }>)[kind]?.alt ?? 'Illustration';
   return <figure className={`scene ${className}`} role="img" aria-label={alt}><span aria-hidden="true" dangerouslySetInnerHTML={{ __html: sceneSvg(kind) }} /></figure>;
 }
@@ -41,7 +43,7 @@ export function ProgramCard({ p, extra }: { p: Program; extra?: ReactNode }){
   const f = fieldBySlug(p.field)!;
   return (
     <article className="pcard">
-      <Link className="pcard-img" href={`/programs/${p.slug}`} tabIndex={-1} aria-hidden="true"><Scene kind={p.scene} /><TypeTag type={p.type} /></Link>
+      <Link className="pcard-img" href={`/programs/${p.slug}`} tabIndex={-1} aria-hidden="true"><Scene kind={p.scene} photo={p.photo} /><TypeTag type={p.type} /></Link>
       <div className="pcard-body">
         <div className="pcard-top">{p.sample && <SampleTag />}<StatusPill status={p.status} /></div>
         <h3><Link href={`/programs/${p.slug}`}>{p.title}</Link></h3>

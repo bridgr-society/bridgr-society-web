@@ -118,6 +118,7 @@ export const programs: Program[] = [
     "status": "open",
     "featured": true,
     "scene": "meeting",
+    "photo": { "src": "/images/prog-shanghai-bizdev.webp", "alt": "Interns reviewing a market map with a manager in a Shanghai office overlooking the Pudong skyline" },
     "summary": "Support a business development team with market research, partner outreach and client materials.",
     "audience": "Business and economics students interested in international trade and partnerships.",
     "activities": [
@@ -212,6 +213,7 @@ export const programs: Program[] = [
     "status": "open",
     "featured": true,
     "scene": "finance",
+    "photo": { "src": "/images/dest-singapore.webp", "alt": "Marina Bay Sands and the Singapore skyline across the bay" },
     "summary": "Support a regional finance team with reporting, analysis and process improvement.",
     "audience": "Finance, accounting and economics students.",
     "activities": [
@@ -304,6 +306,7 @@ export const programs: Program[] = [
     "status": "open",
     "featured": true,
     "scene": "taiwan",
+    "photo": { "src": "/images/hero-taipei.webp", "alt": "Three young people working together at a table in a bright Taipei office" },
     "summary": "A short group program combining company visits, workplace-culture workshops and daily Mandarin practice.",
     "audience": "Students curious about working in Mandarin-speaking environments, including complete beginners.",
     "activities": [

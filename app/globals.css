@@ -682,3 +682,11 @@ noscript .btn{margin-top:8px}
 :root{--accent-font:"Sora", var(--display);--wordmark:"Satoshi", var(--display)}
 .brand-name{font-family:var(--wordmark);font-weight:700;letter-spacing:-.015em}
 .brand-name b{font-family:var(--accent-font);font-weight:600;letter-spacing:-.02em}
+
+/* Photos in place of illustrations (destinations, programs) */
+.scene.photo{position:relative;background:var(--field)}
+.scene.photo img{object-fit:cover}
+.dcard .scene.photo img,.pcard-img .scene.photo img{transition:transform .4s ease}
+.dcard:hover .scene.photo img,.pcard:hover .pcard-img .scene.photo img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.dcard:hover .scene.photo img,.pcard:hover .pcard-img .scene.photo img{transform:none}}
+.scene.photo.d-hero-img{position:absolute;inset:0}

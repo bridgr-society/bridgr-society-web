@@ -19,6 +19,8 @@ export interface Program {
   status: ProgramStatus;
   featured: boolean;
   scene: SceneKind;
+  /** Optional photo; replaces the illustration wherever the program is shown. */
+  photo?: Photo;
   summary: string;
   audience: string;
   activities: string[];
@@ -28,7 +30,8 @@ export interface Program {
   /** Business-supplied facts. null = "To be confirmed". Never invent values. */
   confirmed: { dates: string | null; fee: string | null; inclusions: string[] | null; host: string | null };
 }
-export interface Destination { slug: Slug; name: string; cities: string[]; scene: SceneKind; tagline: string; intro: string; work: string; practical: string[] }
+export interface Photo { src: string; alt: string }
+export interface Destination { slug: Slug; name: string; cities: string[]; scene: SceneKind; photo?: Photo; tagline: string; intro: string; work: string; practical: string[] }
 export interface CareerField { slug: Slug; name: string; icon: string; blurb: string }
 export interface ProgramType { slug: 'internship' | 'immersion'; name: string; short: string; desc: string; not: string }
 export interface Option { slug: Slug; name: string }

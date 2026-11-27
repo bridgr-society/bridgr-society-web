@@ -9,6 +9,7 @@ export const destinations: Destination[] = [
       "Taichung"
     ],
     "scene": "taiwan",
+    "photo": { "src": "/images/dest-taiwan.webp", "alt": "Taipei 101 rising above the Taipei skyline with green hills behind" },
     "tagline": "Design-minded companies, a fast-moving tech scene and everyday Mandarin all around you.",
     "intro": "Taiwan combines a strong manufacturing and technology base with a lively creative and start-up community. Daily life runs in Mandarin, so there are plenty of chances to practise outside work.",
     "work": "Working languages vary by host. Some teams work mainly in Mandarin, others in English with Mandarin used alongside it. Each program states its own language requirement.",
@@ -26,6 +27,7 @@ export const destinations: Destination[] = [
       "Shenzhen"
     ],
     "scene": "china",
+    "photo": { "src": "/images/dest-china.webp", "alt": "Shanghai’s Lujiazui skyline seen across the Huangpu River from the Bund" },
     "tagline": "Work inside large, fast-paced markets and see how business is done at scale.",
     "intro": "Shanghai and Shenzhen are centres for international business, consumer brands, manufacturing and technology. Programs give a first-hand view of how teams operate in some of the world’s busiest markets.",
     "work": "Many host teams use Mandarin day to day; some international teams work in English. Requirements differ by placement and are listed on each program.",
@@ -42,6 +44,7 @@ export const destinations: Destination[] = [
       "Singapore"
     ],
     "scene": "singapore",
+    "photo": { "src": "/images/dest-singapore.webp", "alt": "Marina Bay Sands and the Singapore skyline across the bay" },
     "tagline": "An English-speaking regional hub where Mandarin is a useful extra, not a requirement everywhere.",
     "intro": "Singapore is a base for regional headquarters across finance, technology and marketing. English is the common working language; Mandarin is spoken widely and can help with some teams and clients.",
     "work": "Most placements here work in English. Where Mandarin is needed — for example with clients in Greater China — the program says so.",

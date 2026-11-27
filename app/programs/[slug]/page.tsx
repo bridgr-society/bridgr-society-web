@@ -26,7 +26,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         <div className="tags"><TypeTag type={p.type} />{p.sample && <SampleTag />}</div>
         <h1>{p.title}</h1><p className="p-place"><Icon name="pin" />{placeLine(p)} · <Link className="link" href={`/career-fields/${p.field}`}>{fieldBySlug(p.field)!.name}</Link></p>
         <p className="lead">{p.summary}</p></div>
-      <div className="p-hero-img"><Scene kind={p.scene} /><span className="img-note">Illustration — placeholder for licensed photography</span></div>
+      <div className="p-hero-img"><Scene kind={p.scene} photo={p.photo} sizes="(max-width: 960px) 100vw, 60vw" priority />{!p.photo && <span className="img-note">Illustration — placeholder for licensed photography</span>}</div>
     </div></section>
     <div className="wrap detail">
       <div className="detail-main">

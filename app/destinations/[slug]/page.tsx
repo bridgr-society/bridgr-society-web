@@ -11,7 +11,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
   const d = destinationBySlug((await params).slug); if (!d) notFound();
   const ps = programs.filter(p => p.destination === d.slug);
   return (<>
-    <section className="d-hero"><Scene kind={d.scene} className="d-hero-img" /><div className="d-hero-ov"><div className="wrap"><Crumbs items={[['/', 'Home'], ['/destinations', 'Destinations'], ['', d.name]]} /><h1>{d.name}</h1><p className="lead">{d.tagline}</p></div></div></section>
+    <section className="d-hero"><Scene kind={d.scene} photo={d.photo} className="d-hero-img" sizes="100vw" priority /><div className="d-hero-ov"><div className="wrap"><Crumbs items={[['/', 'Home'], ['/destinations', 'Destinations'], ['', d.name]]} /><h1>{d.name}</h1><p className="lead">{d.tagline}</p></div></div></section>
     <div className="wrap detail">
       <div className="detail-main">
         <section><h2>Why {d.name}</h2><p>{d.intro}</p></section>

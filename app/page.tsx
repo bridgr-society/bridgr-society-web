@@ -34,7 +34,7 @@ export default function Home(){
 
     <section className="wrap sec" aria-labelledby="d-h">
       <div className="sec-head row"><div><span className="eyebrow">Destinations</span><h2 id="d-h">Three places, three ways of working</h2></div><Link className="link" href="/destinations">All destinations <Icon name="right" /></Link></div>
-      <ul className="dgrid">{destinations.map(d => <li key={d.slug}><Link className="dcard" href={`/destinations/${d.slug}`}><Scene kind={d.scene} /><span className="dcard-body"><b>{d.name}</b><i>{d.cities.join(' · ')}</i><span>{d.tagline}</span></span></Link></li>)}</ul>
+      <ul className="dgrid">{destinations.map(d => <li key={d.slug}><Link className="dcard" href={`/destinations/${d.slug}`}><Scene kind={d.scene} photo={d.photo} /><span className="dcard-body"><b>{d.name}</b><i>{d.cities.join(' · ')}</i><span>{d.tagline}</span></span></Link></li>)}</ul>
     </section>
 
     <section className="wrap sec" aria-labelledby="fp-h">
