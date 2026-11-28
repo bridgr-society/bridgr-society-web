@@ -7,6 +7,9 @@ const isProd = process.env.VERCEL_ENV === 'production';
 const config: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  async redirects() {
+    return [{ source: '/programs/taichung-production', destination: '/programs/taipei-production', permanent: true }];
+  },
   async headers() {
     return [{
       source: '/:path*',

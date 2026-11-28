@@ -5,8 +5,7 @@ export const destinations: Destination[] = [
     "slug": "taiwan",
     "name": "Taiwan",
     "cities": [
-      "Taipei",
-      "Taichung"
+      "Taipei"
     ],
     "scene": "taiwan",
     "photo": { "src": "/images/dest-taiwan.webp", "alt": "Taipei 101 rising above the Taipei skyline with green hills behind" },
@@ -24,12 +23,14 @@ export const destinations: Destination[] = [
     "name": "China",
     "cities": [
       "Shanghai",
-      "Shenzhen"
+      "Shenzhen",
+      "Guangzhou",
+      "Hangzhou"
     ],
     "scene": "china",
     "photo": { "src": "/images/dest-china.webp", "alt": "Shanghai’s Lujiazui skyline seen across the Huangpu River from the Bund" },
     "tagline": "Work inside large, fast-paced markets and see how business is done at scale.",
-    "intro": "Shanghai and Shenzhen are centres for international business, consumer brands, manufacturing and technology. Programs give a first-hand view of how teams operate in some of the world’s busiest markets.",
+    "intro": "Shanghai, Shenzhen, Guangzhou and Hangzhou are centres for international business, consumer brands, manufacturing and technology. Programs give a first-hand view of how teams operate in some of the world’s busiest markets.",
     "work": "Many host teams use Mandarin day to day; some international teams work in English. Requirements differ by placement and are listed on each program.",
     "practical": [
       "Visa route — depends on nationality and program type, to be confirmed",

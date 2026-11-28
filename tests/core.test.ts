@@ -47,7 +47,7 @@ describe('guided matching', () => {
     expect(r.good).toEqual([]);
   });
   it('states a language gap instead of hiding it', () => {
-    const x = evaluate(programBySlug('taichung-production')!, { ...base, dest: 'any', fields: ['production'], mandarin: 'beginner' });
+    const x = evaluate(programBySlug('taipei-production')!, { ...base, dest: 'any', fields: ['production'], mandarin: 'beginner' });
     expect(x.miss.join()).toMatch(/Professional working Mandarin/);
   });
 });

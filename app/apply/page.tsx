@@ -23,7 +23,7 @@ export default async function Apply({ searchParams }: { searchParams: Promise<Re
         <ul className="ap-facts">
           <li><Icon name="clock" /><span>Takes about 10 minutes. No account needed.</span></li>
           <li><Icon name="user" /><span>An advisor replies by email, usually within a few working days.</span></li>
-          <li><Icon name="pin" /><span>Programs in Taipei, Taichung, Shanghai, Shenzhen and Singapore.</span></li>
+          <li><Icon name="pin" /><span>Programs in Taipei, Shanghai, Shenzhen, Guangzhou, Hangzhou and Singapore.</span></li>
         </ul>
         <p className="fine">Programs shown are samples while hosts and terms are confirmed. Applying doesn’t guarantee a placement.</p>
       </aside>

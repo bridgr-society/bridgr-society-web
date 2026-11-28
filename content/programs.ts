@@ -386,12 +386,12 @@ export const programs: Program[] = [
     }
   },
   {
-    "slug": "taichung-production",
+    "slug": "taipei-production",
     "title": "Media Production Internship",
     "sample": true,
     "type": "internship",
     "destination": "taiwan",
-    "city": "Taichung",
+    "city": "Taipei",
     "field": "production",
     "duration": "medium",
     "durationText": "8–12 weeks",
